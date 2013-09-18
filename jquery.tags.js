@@ -1,7 +1,7 @@
 /*!
  * tags.js 0.5.0
- * https://github.com/softwarescales/tags
- * Copyright 2013 SoftwareScales, GmbH and other contributors; Licensed MIT
+ * https://github.com/softwarescales/jquery-tags
+ * Copyright 2013 SoftwareScales GmbH and other contributors; Licensed MIT
  */
 
 (function($) {
