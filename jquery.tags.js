@@ -16,6 +16,7 @@
 
     $.fn.tags = function(options) {
 
+        options = options || {};
         var classes = options.classes || {};
         delete options.classes;
 
@@ -155,7 +156,7 @@
 
                         // do not add duplicates
                         if ($container.find('[data-value="' + (value.value || value) + '"]').length) {
-                            return;
+                            return false;
                         }
 
                         // build and insert the tag
@@ -169,6 +170,8 @@
 
                         settings.tagAdded(tag);
                     }
+
+                    return false;
                 }
             });
         });
