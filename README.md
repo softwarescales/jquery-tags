@@ -3,6 +3,11 @@ jquery-tags
 
 A tag-like input
 
+Demo
+----
+
+Check out the [online demo](http://softwarescales.github.io/jquery-tags/).
+
 Usage
 -----
 
