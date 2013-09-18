@@ -14,8 +14,9 @@ Usage
 ```js
 $('#container').tags({
 
-    // initial tags in the input
-    // an array of objects with name and value properties (see validate below)
+    // initial tags in the input; an array that contains:
+    // - strings
+    // - objects with "text" and "value" properties (see validate callback below)
     tags: tags,
 
     // here you can override classes of some generated DOM elements
@@ -43,7 +44,8 @@ $('#container').tags({
 
     // a function called before adding a new tag
     validate: function(input) {
-        // maybe you want to limit the length of the text in tag, give it a display text, translate it, format it, etc.
+        // maybe you want to limit the length of the text in tag,
+        // give it a display text, translate it, format it, etc.
         return {
             text: 'text for ' + input.val(), // optional
             value: input.val()
