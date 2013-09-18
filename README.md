@@ -21,8 +21,12 @@ $('#container').tags({
 
     // here you can override classes of some generated DOM elements
     classes: {
-        image: 'icon-bookmark',
-        remove: 'icon-remove ml-xs'
+        list: 'my-ul-style',        // default empty
+        item: 'my-tag-style',       // default empty
+        text: 'my-tag-text-style',  // default empty
+        input: 'my-input-style',    // default empty
+        image: 'icon-bookmark',     // default: glyphicon glyphicon-tag
+        remove: 'icon-remove'       // default: glyphicon glyphicon-remove
     },
 
     // the placeholder to be shown in the text input
