@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jQuery tags</title>
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.tags.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="jquery.tags.js"></script>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>jQuery tags</h1>
+                    <p>a plugin generating a tag-like input into a DOM container<p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>demos</h2>
+                </div>
+            </div>
+        </div>
+        <!-- sample 1 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Default behavior</p>
+                </div>
+            </div>
+            <div id="sample1" class="row">
+                <div class="col-sm-6">
+                    <pre></pre>
+                </div>
+                <div class="col-sm-6">
+                    <div class="tag-input"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <script class="sample" data-pre="sample1">
+$('#sample1 .tag-input').tags();
+        </script>
+
+        <!-- sample 2 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Set some options</p>
+                </div>
+            </div>
+            <div id="sample2" class="row">
+                <div class="col-sm-6">
+                    <pre></pre>
+                </div>
+                <div class="col-sm-6">
+                    <div class="tag-input"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <script class="sample" data-pre="sample2">
+$('#sample2 .tag-input').tags({
+    placeholder: 'add maximum 3 tags',
+    maxCount: 3,    // default is 5
+    maxLength: 10   // default is 25
+});
+        </script>
+
+        <!-- sample 3 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Now with some given tags</p>
+                </div>
+            </div>
+            <div id="sample3" class="row">
+                <div class="col-sm-6">
+                    <pre></pre>
+                </div>
+                <div class="col-sm-6">
+                    <div class="tag-input"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <script class="sample" data-pre="sample3">
+$('#sample3 .tag-input').tags({
+    tags: [
+        'tag-one',
+        { value: 'tag-two'},
+        { value: 'tag-three', text: 'Tag 3' }
+    ]
+});
+        </script>
+
+        <!-- sample 4 -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>With some callbacks you can always have some fun</p>
+                    <p>The <code>tagRemoved</code> and <code>tagAdded</code> callbacks can be used for AJAX requests made to a server. If these request fail, you can still recover and remove or show back the tag.</>
+                </div>
+            </div>
+            <div id="sample4" class="row">
+                <div class="col-sm-6">
+                    <pre></pre>
+                </div>
+                <div class="col-sm-6">
+                    <div class="tag-input"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <script class="sample" data-pre="sample4">
+$('#sample4 .tag-input').tags({
+    placeholder: 'color code or name',
+    tagAdded: function($tag) {
+        $tag.css('background-color', $tag.attr('data-value'));
+    },
+    tagRemoved: function($tag) {
+        var answer = confirm('Are you sure you want to delete this tag?');
+        if (answer) {
+            $tag.remove();
+        } else {
+            $tag.show();
+        }
+    }
+});
+        </script>
+
+        <script>
+            $('script.sample').each(function() {
+                var $pre = $('#' + $(this).attr('data-pre')).find('pre');
+                if (!$pre.length) {
+                    return;
+                }
+                $pre.text($(this).text().trim());
+            });
+        </script>
+    <body>
+</html>
