@@ -27,12 +27,13 @@ $('#container').tags({
 
     // callback called after a tag was added to the UI
     tagAdded: function(tag) {
-        // tou can make an ajax request here
+        // you can make an ajax request here and send it to the server
     },
 
-    // callback called after a tag was added to the UI
+    // callback called after a tag was removed from the UI
     tagRemoved: function(tag) {
         // you can make an ajax request here as well
+        // since the tag is only hidden, you can show it back if the ajax request failed
     },
 
     // a function called before adding a new tag
@@ -45,3 +46,31 @@ $('#container').tags({
     }
 });
 ```
+
+Features
+--------
+
+### Hidden removed tags
+
+When pressing the remove icon, the tags are not removed from the DOM. They are just hidden. This way you can decide to remove them later (for example after an AJAX request succeded).
+
+
+TODOs
+-----
+
+- add a tag retrieval function that returns an array of objects (see the `validate` documentation above):
+
+```js
+var tags = $('#container').tags('tags');
+```
+
+- add inline tag detection to be able to populate the input automatically from the DOM inside the tag container:
+
+```html
+<div id="container">
+    <i class="tag hide" data-text="tag UI text 1" data-value="tag-actual-value-1"/>
+    <i class="tag hide" data-text="tag UI text 2" data-value="tag-actual-value-2"/>
+    <i class="tag hide" data-text="tag UI text 3" data-value="tag-actual-value-3"/>
+</div>
+```
+
