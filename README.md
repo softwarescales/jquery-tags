@@ -1,12 +1,18 @@
 jquery-tags
 ===========
 
-A tag-like input
+A jQuery plugin transforming a DOM lement into a tag-like input
 
 Demo
 ----
 
 Check out the [online demo](http://softwarescales.github.io/jquery-tags/).
+
+Dependencies
+------------
+
+* [jQuery](http://jquery.com/)
+* the default icons are the [Bootstrap 3](http://getbootstrap.com/) Glyphicons, but they can be replaced, for example, like in the example below with the [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons.
 
 Usage
 -----
