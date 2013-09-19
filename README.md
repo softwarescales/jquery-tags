@@ -1,7 +1,7 @@
 jquery-tags
 ===========
 
-A jQuery plugin transforming a DOM lement into a tag-like input
+A jQuery plugin transforming a DOM element into a tag-like input
 
 Demo
 ----
