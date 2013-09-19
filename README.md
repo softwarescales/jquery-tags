@@ -71,6 +71,19 @@ Features
 
 When pressing the remove icon, the tags are not removed from the DOM. They are just hidden. This way you can decide to remove them later (for example after an AJAX request succeded).
 
+### Inline initial tags
+
+All the DOM elements with the class `tag` found in the tag container will be removed and transformed into initial tags. They will be appended to the set of tags in the `tags` option.
+
+For example, this fragment will display three initial tags in the tag input:
+
+```html
+<div id="container">
+    <i class="tag hide" data-text="Visible tag 1" data-value="internal-tag-1"/>
+    <i class="tag hide" data-text="Visible tag 2" data-value="internal-tag-2"/>
+    <i class="tag hide" data-text="Visible tag 3" data-value="internal-tag-3"/>
+</div>
+```
 
 TODOs
 -----
@@ -79,15 +92,5 @@ TODOs
 
 ```js
 var tags = $('#container').tags('tags');
-```
-
-- add inline tag detection to be able to populate the input automatically from the DOM inside the tag container:
-
-```html
-<div id="container">
-    <i class="tag hide" data-text="tag UI text 1" data-value="tag-actual-value-1"/>
-    <i class="tag hide" data-text="tag UI text 2" data-value="tag-actual-value-2"/>
-    <i class="tag hide" data-text="tag UI text 3" data-value="tag-actual-value-3"/>
-</div>
 ```
 

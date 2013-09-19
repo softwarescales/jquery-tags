@@ -1,3 +1,15 @@
+/* generic rules */
+
+.noselect {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* page style */
+
 #page-container {
     min-height: 100%;
     box-shadow: 0px 4px 15px #DDD;
@@ -23,40 +35,6 @@ footer {
     padding-bottom: 30px;
 }
 
-.logo {
-    color: black !important;
-    font-family: Arial;
-    background-repeat: no-repeat;
-}
-
-.logo-sm {
-    font-size: 37px;
-    padding-left: 33px;
-    background-image: url(logo-sm.png);
-    background-position: 0 3px;
-}
-
-.logo-md {
-    font-size: 73px;
-    padding-left: 67px;
-    background-image: url(logo-md.png);
-    background-position: 0 4px;
-}
-
-.logo-xs {
-    font-size: 18px;
-    padding-left: 16px;
-    background-image: url(logo-xs.png);
-    background-position: 0 2px;
-}
-
-.red { color: #FF2B6B; }
-.bg-red { background-color: #FF2B6B; }
-.green { color: #45BC3C; }
-.br-green { background-color: #45BC3C; }
-.orange { color: #FFA73B; }
-.bg-orange { background-color: #FFA73B; }
-
 .htag {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -75,11 +53,44 @@ footer {
     margin: 0 5px;
 }
 
-.noselect {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+hr {
+    border-top: 1px solid rgba(69, 188, 60, 0.5);
 }
+
+/* ss branding */
+
+.logo {
+    color: black !important;
+    font-family: Arial !important;
+    font-weight: normal !important;
+    background-repeat: no-repeat !important;
+}
+
+.logo-xs {
+    font-size: 18px;
+    padding-left: 16px;
+    background-image: url(logo-xs.png);
+    background-position: 0 2px;
+}
+
+.logo-sm {
+    font-size: 37px;
+    padding-left: 33px;
+    background-image: url(logo-sm.png);
+    background-position: 0 3px;
+}
+
+.logo-md {
+    font-size: 73px;
+    padding-left: 67px;
+    background-image: url(logo-md.png);
+    background-position: 0 4px;
+}
+
+.red { color: #FF2B6B; }
+.bg-red { background-color: #FF2B6B; }
+.green { color: #45BC3C; }
+.br-green { background-color: #45BC3C; }
+.orange { color: #FFA73B; }
+.bg-orange { background-color: #FFA73B; }
 

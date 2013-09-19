@@ -1,5 +1,5 @@
 /*!
- * tags.js 0.5.0
+ * tags.js 0.6.0
  * https://github.com/softwarescales/jquery-tags
  * Copyright 2013 SoftwareScales GmbH and other contributors; Licensed MIT
  */

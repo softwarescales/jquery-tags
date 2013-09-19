@@ -20,7 +20,8 @@
                     <div class="col-sm-6">
                         <h1 class="noselect">
                             <span class="htag bg-red"><i class="glyphicon glyphicon-tag"></i>jQuery<i class="glyphicon glyphicon-remove"></i></span>
-                            <span class="htag bg-orange"><i class="glyphicon glyphicon-tag"></i>tags<i class="glyphicon glyphicon-remove"></i></span></h1>
+                            <span class="htag bg-orange"><i class="glyphicon glyphicon-tag"></i>tags<i class="glyphicon glyphicon-remove"></i></span>
+                        </h1>
                     </div>
                     <div class="col-sm-6 text-right">
                         <h1><span class="logo logo-sm noselect">software<span class="green">scales</span></span></h1>
@@ -41,7 +42,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <p>Default behavior</p>
+                        <p><span class="orange">Default</span> behavior</p>
                     </div>
                 </div>
                 <div id="sample1" class="row">
@@ -126,11 +127,53 @@ $('#sample3 .tag-input').tags({
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
+                        <p>The initial tags can also be <span class="orange">inline</span>.</p>
+                        <p>What you need to do is to have some DOM elements with the class <code>tag</code> and attributes <code>data-value</code> and <code>data-text</code> (optional) inside the initial tag container. They will be removed from the DOM and are transformed into initial tags.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <pre>
+&lt;div class="tag-input"&gt;
+    &lt;i class="tag" data-value="html-tag-1"&gt;&lt;/i&gt;
+    &lt;i class="tag" data-value="html-tag-2" data-text="HTML Tag 2"&gt;&lt;/i&gt;
+&lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+                <div id="sample4" class="row">
+                    <div class="col-sm-6">
+                        <pre></pre>
+                    </div>
+                    <div class="col-sm-6 noselect">
+                        <div class="tag-input">
+                            <i class="tag" data-value="html-tag-1"></i>
+                            <i class="tag" data-value="html-tag-2" data-value="HTML Tag 2"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+            <script class="sample" data-pre="sample4">
+$('#sample4 .tag-input').tags({
+    tags: [
+        'js-tag-1',
+        { value: 'js-tag-2', text: 'JS Tag 2' }
+    ]
+});
+            </script>
+
+            <!-- sample 5 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
                         <p>With some <span class="orange">callbacks</span> you can always have some fun</p>
                         <p>The <code>tagRemoved</code> and <code>tagAdded</code> callbacks can be used for AJAX requests made to a server. If these request fail, you can still recover and remove or show back the tag.</>
                     </div>
                 </div>
-                <div id="sample4" class="row">
+                <div id="sample5" class="row">
                     <div class="col-sm-6">
                         <pre></pre>
                     </div>
@@ -144,8 +187,8 @@ $('#sample3 .tag-input').tags({
                     </div>
                 </div>
             </div>
-            <script class="sample" data-pre="sample4">
-$('#sample4 .tag-input').tags({
+            <script class="sample" data-pre="sample5">
+$('#sample5 .tag-input').tags({
     placeholder: 'color code or name',
     tagAdded: function($tag) {
         $tag.css('background-color', $tag.attr('data-value'));
