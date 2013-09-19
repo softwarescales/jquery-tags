@@ -8,100 +8,111 @@
 
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="jquery.tags.css" rel="stylesheet">
+    <link href="assets/demo.css" rel="stylesheet">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="jquery.tags.js"></script>
 
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h1>jQuery tags</h1>
-                    <p>a plugin generating a tag-like input into a DOM container<p>
+        <div id="page-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1 class="noselect">
+                            <span class="htag bg-red"><i class="glyphicon glyphicon-tag"></i>jQuery<i class="glyphicon glyphicon-remove"></i></span>
+                            <span class="htag bg-orange"><i class="glyphicon glyphicon-tag"></i>tags<i class="glyphicon glyphicon-remove"></i></span></h1>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <h1><span class="logo logo-sm noselect">software<span class="green">scales</span></span></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>a plugin generating a tag-like input into a DOM container<p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="green">demos</h2>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2>demos</h2>
+            <!-- sample 1 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>Default behavior</p>
+                    </div>
+                </div>
+                <div id="sample1" class="row">
+                    <div class="col-sm-6">
+                        <pre></pre>
+                    </div>
+                    <div class="col-sm-6 noselect">
+                        <div class="tag-input"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- sample 1 -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>Default behavior</p>
-                </div>
-            </div>
-            <div id="sample1" class="row">
-                <div class="col-sm-6">
-                    <pre></pre>
-                </div>
-                <div class="col-sm-6">
-                    <div class="tag-input"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <hr/>
-                </div>
-            </div>
-        </div>
-        <script class="sample" data-pre="sample1">
-$('#sample1 .tag-input').tags();
-        </script>
+            <script class="sample" data-pre="sample1">
+    $('#sample1 .tag-input').tags();
+            </script>
 
-        <!-- sample 2 -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>Set some options</p>
+            <!-- sample 2 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>Set some <span class="orange">options</span></p>
+                    </div>
+                </div>
+                <div id="sample2" class="row">
+                    <div class="col-sm-6">
+                        <pre></pre>
+                    </div>
+                    <div class="col-sm-6 noselect">
+                        <div class="tag-input"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                    </div>
                 </div>
             </div>
-            <div id="sample2" class="row">
-                <div class="col-sm-6">
-                    <pre></pre>
-                </div>
-                <div class="col-sm-6">
-                    <div class="tag-input"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <hr/>
-                </div>
-            </div>
-        </div>
-        <script class="sample" data-pre="sample2">
+            <script class="sample" data-pre="sample2">
 $('#sample2 .tag-input').tags({
     placeholder: 'add maximum 3 tags',
     maxCount: 3,    // default is 5
     maxLength: 10   // default is 25
 });
-        </script>
+            </script>
 
-        <!-- sample 3 -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>Now with some given tags</p>
+            <!-- sample 3 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>Now with some <span class="orange">initial tags</span></p>
+                    </div>
+                </div>
+                <div id="sample3" class="row">
+                    <div class="col-sm-6">
+                        <pre></pre>
+                    </div>
+                    <div class="col-sm-6 noselect">
+                        <div class="tag-input"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                    </div>
                 </div>
             </div>
-            <div id="sample3" class="row">
-                <div class="col-sm-6">
-                    <pre></pre>
-                </div>
-                <div class="col-sm-6">
-                    <div class="tag-input"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <hr/>
-                </div>
-            </div>
-        </div>
-        <script class="sample" data-pre="sample3">
+            <script class="sample" data-pre="sample3">
 $('#sample3 .tag-input').tags({
     tags: [
         'tag-one',
@@ -109,31 +120,31 @@ $('#sample3 .tag-input').tags({
         { value: 'tag-three', text: 'Tag 3' }
     ]
 });
-        </script>
+            </script>
 
-        <!-- sample 4 -->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>With some callbacks you can always have some fun</p>
-                    <p>The <code>tagRemoved</code> and <code>tagAdded</code> callbacks can be used for AJAX requests made to a server. If these request fail, you can still recover and remove or show back the tag.</>
+            <!-- sample 4 -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>With some <span class="orange">callbacks</span> you can always have some fun</p>
+                        <p>The <code>tagRemoved</code> and <code>tagAdded</code> callbacks can be used for AJAX requests made to a server. If these request fail, you can still recover and remove or show back the tag.</>
+                    </div>
+                </div>
+                <div id="sample4" class="row">
+                    <div class="col-sm-6">
+                        <pre></pre>
+                    </div>
+                    <div class="col-sm-6 noselect">
+                        <div class="tag-input"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <hr/>
+                    </div>
                 </div>
             </div>
-            <div id="sample4" class="row">
-                <div class="col-sm-6">
-                    <pre></pre>
-                </div>
-                <div class="col-sm-6">
-                    <div class="tag-input"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <hr/>
-                </div>
-            </div>
-        </div>
-        <script class="sample" data-pre="sample4">
+            <script class="sample" data-pre="sample4">
 $('#sample4 .tag-input').tags({
     placeholder: 'color code or name',
     tagAdded: function($tag) {
@@ -148,16 +159,31 @@ $('#sample4 .tag-input').tags({
         }
     }
 });
-        </script>
+            </script>
 
-        <script>
-            $('script.sample').each(function() {
-                var $pre = $('#' + $(this).attr('data-pre')).find('pre');
-                if (!$pre.length) {
-                    return;
-                }
-                $pre.text($(this).text().trim());
-            });
-        </script>
+            <script>
+                $('script.sample').each(function() {
+                    var $pre = $('#' + $(this).attr('data-pre')).find('pre');
+                    if (!$pre.length) {
+                        return;
+                    }
+                    $pre.text($(this).text().trim());
+                });
+            </script>
+
+            <a class="noselect" href="https://github.com/softwarescales/jquery-tags"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
+        </div>
+
+        <footer class="noselect">
+            <div id="footer-fixed">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            &copy; 2013 <span class="logo logo-xs">software<span class="green">scales</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     <body>
 </html>
