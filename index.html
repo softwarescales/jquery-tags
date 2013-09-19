@@ -167,7 +167,7 @@ $('#sample4 .tag-input').tags({
                     if (!$pre.length) {
                         return;
                     }
-                    $pre.text($(this).text().trim());
+                    $pre.text($(this).text().trim().replace(/#sample\d+ /, ''));
                 });
             </script>
 
