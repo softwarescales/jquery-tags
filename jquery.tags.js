@@ -39,6 +39,7 @@
             validate: validate
         }, options);
 
+        // overwrite only the provided classes
         for (var i in classes) {
             if (typeof settings.classes[i] === 'string' && typeof classes[i] === 'string') {
                 settings.classes[i] = classes[i];
@@ -72,10 +73,23 @@
 
         return this.each(function() {
             var $container, $tagList, $tagInput;
-            
+
             $container = $(this);
+
+            // see if there are some inline initial tags and add them to the settings tags
+            $container.find('.tag').each(function() {
+                var $tag = $(this);
+                settings.tags.push({
+                    value: $tag.attr('data-value'),
+                    text: $tag.attr('data-text') || $tag.attr('data-value')
+                });
+                $tag.remove();
+            });
+
+            // now we can start builging the UI
             $tagList = $('<ul class="tag-list ' + settings.classes.list + '"></ul>');
 
+            // and for each given tag we add one to the list
             for (var i in settings.tags) {
                 $tagList.append($(buildTagHtml(settings.tags[i])));
             }
