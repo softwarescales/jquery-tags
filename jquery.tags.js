@@ -85,13 +85,22 @@
                 });
                 $tag.remove();
             });
+            // duplicate elimination
+            var initialTags = [];
+            var duplicatesObj = {};
+            for (var i in settings) {
+                duplicatesObj[settings[i]] = true;
+            }
 
             // now we can start builging the UI
             $tagList = $('<ul class="tag-list ' + settings.classes.list + '"></ul>');
 
             // and for each given tag we add one to the list
-            for (var i in settings.tags) {
-                $tagList.append($(buildTagHtml(settings.tags[i])));
+            var i;
+            for (i = 0; i < settings.tags.length; ++i) {
+                if (i < settings.maxCount) {
+                    $tagList.append($(buildTagHtml(settings.tags[i])));
+                }
             }
 
             // the tag input
@@ -101,6 +110,9 @@
                 '</li>');
 
             $tagInput = $tagList.find('.tag-input');
+            if (i >= settings.maxCount) {
+                $tagInput.closest('.tag-item').hide();
+            }
 
             // add the DOM
             $container.append($tagList);
@@ -108,11 +120,18 @@
             // focus on tag or tag input
             $container.on('click', '.tag-list', function(e) {
                 var item = $(e.target).closest('.tag');
+                // if we clicked inside a tag, focus on it
                 if (item.length) {
                     item.focus();
                     e.stopPropagation();
-                } else {
-                    $tagInput.focus();
+                }
+                else {
+                    // otherwise focus on the input if visible
+                    if ($tagInput.is(':visible')) {
+                        $tagInput.focus();
+                    } else {
+                        $container.find('.tag:visible').last().focus();
+                    }
                 }
             });
 
