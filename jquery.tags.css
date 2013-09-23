@@ -88,9 +88,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .tag-list input {
     border: 0;
     padding: 0 6px;
-    margin: 0;
-    line-height: 34px;
-    height: 34px;
+    margin: 3px 0px;
+    line-height: 28px;
+    height: 28px;
     -webkit-appearance: none;
     /* overwrite bootstrap */
     -webkit-box-shadow: none;
