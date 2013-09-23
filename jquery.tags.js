@@ -35,7 +35,9 @@
             },
             placeholder: 'tag',
             tagAdded: function() {},
-            tagRemoved: function() {},
+            tagRemoved: function($tag) {
+                $tag.remove();
+            },
             validate: validate
         }, options);
 
