@@ -48,8 +48,8 @@ $('#container').tags({
 
     // callback called after a tag was removed from the UI
     tagRemoved: function(tag) {
-        // you can make an ajax request here as well
-        // since the tag is only hidden, you can show it back if the ajax request failed
+        // you can make an ajax request here as well and only remove the tag on success
+        tag.remove();
     },
 
     // a function called before adding a new tag
